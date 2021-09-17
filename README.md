@@ -34,6 +34,14 @@ View swagger documentation at:
 
     https://localhost:5001/swagger/index.html
 
-Create a TODO item (from a Powershell prompt):
+Create a todo item:
 
     Invoke-WebRequest -Uri https://localhost:5001/api/TodoItems -Method POST -Body '{ "Name": "Ta helg", "IsComplete": false}' -ContentType "application/json"
+
+Get all todo items:
+
+    Invoke-WebRequest -Uri https://localhost:5001/api/TodoItems -Method GET
+
+Delete a todo item:
+
+    Invoke-WebRequest -Uri https://localhost:5001/api/TodoItems/{id} -Method DELETE
